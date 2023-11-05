@@ -13,7 +13,7 @@ Project for Ruby Conf 2023
 ## Learning Goals
 - Understand Hotwire - Turbo and Stimulus
 - Organize and refactor code to be more maintainable
-- Authentication implementation
+- Authentication implementation using the [Devise gem](https://github.com/heartcombo/devise)
 
 ## Technologies
 

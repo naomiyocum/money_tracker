@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to Expenses"), expenses_path %>
+  <div class="header">
+    <h1>
+      <%= @expense.label %>
+      <%= @expense.amount %>
+    </h1>
+  </div>
+</main>

@@ -1,0 +1,11 @@
+<%= simple_form_for expense, html: { class: "expense form" } do |f| %>
+  <% if expense.errors.any? %>
+    <div class="error-message">
+      <%= expense.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :label, input_html: { autofocus: true } %>
+  <%= f.input :amount, input_html: { autofocus: true } %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>

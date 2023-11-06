@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to expenses"), expenses_path %>
+
+  <div class="header">
+    <h1>New Expense</h1>
+  </div>
+
+  <%= render "form", expense: @expense %>
+</main>

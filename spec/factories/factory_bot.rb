@@ -1,21 +1,21 @@
 FactoryBot.define do
   factory :asset do
-    label { "Roth IRA" || "401K" || "Crypto" }
+    label { ["Roth IRA", "401K", "Crypto"].sample }
     amount { Faker::Number.between(from: 15000, to: 33333) }
   end
 
   factory :debt do
-    label { "School Loans" || "Chase Freedom Unlimited CC" || "Citi Costco CC" }
+    label { ["School Loans", "Chase Freedom Unlimited CC", "Citi Costco CC", "Car Loan"].sample }
     amount { Faker::Number.between(from: 1, to: 300) }
   end
 
   factory :expense do
-    label { "Gas" || "HBO Max Subscription" || "Groceries" }
+    label { ["Gas", "HBO Max Subscription", "Groceries", "Netflix Subscription"].sample }
     amount { Faker::Number.between(from: 1, to: 300) }
   end
 
   factory :income do
-    label { "W2" || "Freelancing Gig" || "Lyft Earnings" }
+    label { ["W2", "Freelancing Gig","Lyft Earnings"].sample }
     amount { Faker::Number.between(from: 1500, to: 8000) }
   end
 

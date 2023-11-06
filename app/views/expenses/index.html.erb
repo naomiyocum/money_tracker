@@ -1,0 +1,10 @@
+<main class="container">
+  <div class="header">
+    <h1>Expenses</h1>
+    <%= link_to "New Expense",
+    new_expense_path,
+    class: "btn btn--primary" %>
+  </div>
+
+  <%= render @expenses %>
+</main>

@@ -5,5 +5,7 @@
     <h1>Edit Expense</h1>
   </div>
 
-  <%= render "form", expense: @expense %>
+  <%= turbo_frame_tag @expense do %>
+    <%= render "form", expense: @expense %>
+  <% end %>
 </main>

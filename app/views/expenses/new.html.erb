@@ -2,8 +2,9 @@
   <%= link_to sanitize("&larr; Back to expenses"), expenses_path %>
 
   <div class="header">
-    <h1>New Expense</h1>
+    <h1>Add Expense</h1>
   </div>
-
-  <%= render "form", expense: @expense %>
+  <%= turbo_frame_tag @expense do %>
+    <%= render "form", expense: @expense %>
+  <% end %>
 </main>

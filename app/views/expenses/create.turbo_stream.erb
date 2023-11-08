@@ -1,0 +1,6 @@
+<%= turbo_stream.prepend "expenses", partial: "expenses/expense", locals: { expense: @expense }%>
+<%= turbo_stream.update Expense.new, "" %>
+
+# first line, tells Turbo to prepend to the Turbo Frame with id `expenses` the `app/views/expenses/_expense.html.erb` partial
+
+<%# <%= turbo_stream.prepend "expenses", @expense %> equivalent to first line

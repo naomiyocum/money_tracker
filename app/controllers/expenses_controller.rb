@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[show edit update destroy]
 
   def index
-    @expenses = Expense.all
+    @expenses = Expense.ordered
   end
 
   def show; end
@@ -15,7 +15,10 @@ class ExpensesController < ApplicationController
     @expense = Expense.new(expense_params)
 
     if @expense.save
-      redirect_to expenses_path, notice: "Expense was successfully created!"
+      respond_to do |format|
+        format.html { redirect_to expenses_path, notice: "Expense was successfully created!" }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,13 +30,16 @@ class ExpensesController < ApplicationController
     if @expense.update(expense_params)
       redirect_to expenses_path, notice: "Expense was successfully updated!"
     else
-      redirect :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @expense.destroy
-    redirect_to expenses_path, notice: "Expense was successfully destroyed."
+    respond_to do |format|
+      format.html { redirect_to expenses_path, notice: "Expense was successfully destroyed." }
+      format.turbo_stream
+    end
   end
 
   private

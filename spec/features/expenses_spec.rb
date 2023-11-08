@@ -14,9 +14,9 @@ RSpec.describe 'Expenses', type: :feature do
 
     it 'creates an expense' do
       visit expenses_path
+      assert_selector "a", text: "New Expense"
+      
       click_on "New Expense"
-      assert_selector "h1", text: "New Expense"
-
       fill_in "Label", with: "Netflix Subscription"
       fill_in "Amount", with: 9.99
       click_on "Create Expense"
@@ -28,15 +28,13 @@ RSpec.describe 'Expenses', type: :feature do
 
     it 'updates an expense' do
       visit expenses_path
-      assert_selector "h1", text: "Expenses"
+      assert_selector "a", text: "Edit"
 
       click_on "Edit", match: :first
-      assert_selector "h1", text: "Edit Expense"
-
       fill_in "Label", with: "Mortgage"
+      
       click_on "Update Expense"
 
-      assert_selector "h1", text: "Expenses"
       assert_text "Mortgage"
     end
 

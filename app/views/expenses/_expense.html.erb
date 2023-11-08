@@ -1,13 +1,17 @@
-<div class="expense">
-  <%= link_to "#{expense.label} - $#{expense.amount}", expense_path(expense) %>
-  <div class="expense__actions">
-    <%= button_to "Delete",
-    expense_path(expense),
-    method: :delete,
-    class: "btn btn--light" %>
+<%= turbo_frame_tag expense do %>
+  <div class="expense">
+    <%= link_to "#{expense.label} - $#{expense.amount}",
+      expense_path(expense),
+      data: { turbo_frame: "_top" } %>
+    <div class="expense__actions">
+      <%= button_to "Delete",
+        expense_path(expense),
+        method: :delete,
+        class: "btn btn--light" %>
 
-    <%= link_to "Edit",
-    edit_expense_path(expense),
-    class: "btn btn--light" %>
+      <%= link_to "Edit",
+        edit_expense_path(expense),
+        class: "btn btn--light" %>
+    </div>
   </div>
-</div>
+<% end %>

@@ -3,8 +3,13 @@
     <h1>Expenses</h1>
     <%= link_to "New Expense",
     new_expense_path,
-    class: "btn btn--primary" %>
+    class: "btn btn--primary",
+    data: { turbo_frame: dom_id(Expense.new) } %>
   </div>
 
-  <%= render @expenses %>
+  <%= turbo_frame_tag Expense.new %>
+  
+  <%= turbo_frame_tag "expenses" do %>
+    <%= render @expenses %>
+  <% end %>
 </main>

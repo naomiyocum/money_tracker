@@ -25,7 +25,7 @@ Project for Ruby Conf 2023
 - Rails 7.0.8
 
 ## Schema Design
-
+- will update to include months
 ![ruby-conf](https://github.com/naomiyocum/money_tracker/assets/102825498/249854e3-5e47-4675-8cfc-380e8b9a2edd)
 
 ## Usage
